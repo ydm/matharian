@@ -29,6 +29,10 @@ const ExerciseComponent: React.FC<ExerciseComponentProps> = (props: ExerciseComp
     }
   }
 
+  function reloadPage() {
+    window.location.reload();
+  }
+
   return (
     <>
       <div>
@@ -43,7 +47,7 @@ const ExerciseComponent: React.FC<ExerciseComponentProps> = (props: ExerciseComp
         <button onClick={check}>Провери</button>
         <br />
         <h2 ref={resultRef}></h2>
-        {isCorrect && <a href="/">Зареди нова задача</a>}
+        {isCorrect && <a href="#" onClick={(e) => { e.preventDefault(); reloadPage(); }}>Зареди нова задача</a>}
       </div>
     </>
   );
